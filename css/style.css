@@ -1,49 +1,58 @@
-:root{
-    --primary-color:#1e3a8a;
+:root {
+    --primary-color: #1e3a8a;
     --secondary-color: #10b981;
     --bg-color: #e2e8f0;
     --card-bg: #ffffff;
-    --text-dark: #1f2937;
-    --radius:8px;
-    --shadow:0 2px 8px rgba(0, 0, 0, 0.12);
+    --text-dark: #1b1a1a;
+    --radius: 8px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(221, 28, 28, 0.13)),url(/css/texas-tech-university-campus-united-spirit-arena.webp);
+    background-repeat:no-repeat;
+    background-size: contain;
     background-color: var(--bg-color);
     color: var(--text-dark);
     line-height: 1.6;
 }
 
-main{
+main {
     max-width: 1000px;
-    margin: 0;
+    margin: 0 auto;
     padding: 20px;
 }
 
-section{
+section {
     margin-bottom: 35px;
+}
+
+h1{
+   text-align: center;
 }
 
 h1, h2, h3 {
     color: var(--text-dark);
     margin-bottom: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
-header{
-    background-color: var(--bg-color)
-    color: white;
+header {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
     padding: 15px;
+    box-shadow: var(--shadow);
 }
 
-.navbar{
+.navbar {
     max-width: 1000px;
     margin: auto;
     display: flex;
@@ -52,21 +61,32 @@ header{
     flex-wrap: wrap;
 }
 
-.nav-links{
-    color: white;
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #333;
     text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 5px;
 }
 
-.nav-links a:hover, .nav-links a.active{
-    background-color: var(--secondary-color)
+.nav-links a:hover, 
+.nav-links a.active {
+    background-color: var(--secondary-color);
+    color: white;
 }
 
-
-.menu-btn{
+.menu-btn {
     display: none;
-    background: none;border: 1px solid white;
+    background: none;
+    border: 1px solid white;
     color: white;
     font-size: 1.1rem;
     padding: 10px;
@@ -74,103 +94,117 @@ header{
     cursor: pointer;
 }
 
-.hero{
-    background-color: var(--bg-color);
+.hero {
+    background-color: var(--card-bg);
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px rgba(0, 0, 0, 0.12);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     text-align: center;
-    border-left: 5px solid var(#10b981);
+    border-left: 5px solid var(--secondary-color);
 }
- .dashboard-stats{
+
+.dashboard-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:20px;
- }
+    gap: 20px;
+}
 
- .grid-section{
+.grid-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
- }
+}
 
- .stat-card .card{
+.stat-card .card {
     background-color: var(--card-bg);
     padding: 20px;
-    border-radius: var(8px);
-    box-shadow: 2px rgba(0, 0, 0,  0.12);
- }
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
 
- .stat-card{
+.stat-card {
     text-align: center;
- }
+}
 
- .stat-card p{
+.stat-card p {
     font-size: 2rem;
     font-weight: bold;
     color: var(--secondary-color);
- }
+}
 
- .form-group{
+.team-card {
+    background-color: var(--card-bg);
+    padding: 25px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+.form-group {
     display: block;
     font-weight: 600;
     margin-bottom: 5px;
- }
+}
 
- input, select, textarea{
+input, select, textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
+    border: 1px solid #cbd5e1;
     font-size: 1rem;
- }
+}
 
- input:focus, select:focus,textarea:focus{
-    border-color:var(--primary-color);
- }
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
 
- .btn-primary{
+.btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1rem;
     margin-top: 8px;
- }
+    cursor: pointer;
+}
 
- .social-links{
+.social-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
- }
+}
 
- .social-badge{
+.social-badge {
     background-color: var(--primary-color);
-    color: grey;
+    color: white;
+    padding: 6px 12px;
     border-radius: 10px;
+    text-decoration: none;
     font-size: 1rem;
- }
+}
 
- .social-badge:hover{
+.social-badge:hover {
     background-color: var(--secondary-color);
- }
+}
 
-
- footer-links{
+.footer-links {
     margin: 10px;
- }
+}
 
- .footer-links a{
+.footer-links a {
     color: white;
     text-decoration: none;
     margin: 8px;
- }
+}
 
- .footer-links:hover{
-    background-color: var(--secondary-color);
- }
-
- footer{
+footer {
     background-color: var(--primary-color);
+    color: white;
     text-align: center;
     padding: 20px;
- }
+    margin-top: 40px;
+}
